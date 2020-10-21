@@ -17,24 +17,19 @@ import java.util.List;
 import java.util.Map;
 
 public class Main {
-    public static String fileImportPath;
-    public static final String xmlFilePathMaterial = "src\\main\\resources\\xmlFile.xml";
-    public static String fileExportPath = "src/main/resources/AufmassImport.xml";
+    public static String fileImportPath = "C:\\Users\\BSU Holding 02\\IdeaProjects\\ExcelConverter\\src\\main\\resources\\Grundriss 3.csv";
+    public static String fileExportPath = "";
     public static List<Aufmasszeile> aufmasszeileList = new ArrayList<>();
+    private static String xmlFilePathMaterial;
 
-    public static void main(String[] args) {
-//        ExcelReader excelReader = new ExcelReader();
-//        Map<Integer, List<String>> data = excelReader.loadData("src/main/resources/PS_BSU_Gesamt-LV_Final.xlsx");
-//        writeToXml(data);
 
+    public static void convert(){
         CSVImport csvImport = new CSVImport();
-        csvImport.loadData("src/main/resources/Grundriss 3.csv");
+        csvImport.loadData(fileImportPath);
         csvImport.findHeader();
         csvImport.createAufmasszeilen(aufmasszeileList);
 
         writeCSVToXMLforAufmass();
-
-        //System.out.println(data.toString());
     }
 
 
@@ -146,11 +141,14 @@ public class Main {
 
 
         try {
+
+            File exportFile = new File(fileExportPath + "\\Aufmass.xml");
+
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             transformer.setOutputProperty(OutputKeys.ENCODING, "ISO-8859-1");
             DOMSource domSource = new DOMSource(document);
-            StreamResult streamResult = new StreamResult(new File(fileExportPath));
+            StreamResult streamResult = new StreamResult(exportFile);
             transformer.transform(domSource, streamResult);
         } catch (TransformerException e) {
             e.printStackTrace();

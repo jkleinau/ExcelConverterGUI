@@ -1,15 +1,12 @@
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.scene.control.Control;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import java.awt.*;
 import java.io.File;
 
 public class Controller {
-    @FXML private Label label;
     //public TextField importTextField;
      public void onClickImport(ActionEvent event) {
         //System.out.println("Click");
@@ -52,5 +49,10 @@ public class Controller {
 
         // Set Initial Directory
         //directoryChooser.setInitialDirectory(new File(System.getProperty("user.home")));
+    }
+
+    public void onClickConvert(ActionEvent event) {
+        assert !Main.fileExportPath.isEmpty() || !Main.fileImportPath.isEmpty();
+        Main.convert();
     }
 }
