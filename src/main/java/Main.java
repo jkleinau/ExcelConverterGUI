@@ -17,8 +17,9 @@ import java.util.List;
 import java.util.Map;
 
 public class Main {
+    public static String fileImportPath;
     public static final String xmlFilePathMaterial = "src\\main\\resources\\xmlFile.xml";
-    public static final String xmlFilePathAufmass = "src/main/resources/AufmassImport.xml";
+    public static String fileExportPath = "src/main/resources/AufmassImport.xml";
     public static List<Aufmasszeile> aufmasszeileList = new ArrayList<>();
 
     public static void main(String[] args) {
@@ -149,7 +150,7 @@ public class Main {
             Transformer transformer = transformerFactory.newTransformer();
             transformer.setOutputProperty(OutputKeys.ENCODING, "ISO-8859-1");
             DOMSource domSource = new DOMSource(document);
-            StreamResult streamResult = new StreamResult(new File(xmlFilePathAufmass));
+            StreamResult streamResult = new StreamResult(new File(fileExportPath));
             transformer.transform(domSource, streamResult);
         } catch (TransformerException e) {
             e.printStackTrace();

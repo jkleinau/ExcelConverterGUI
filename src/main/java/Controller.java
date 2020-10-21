@@ -1,6 +1,7 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Control;
+import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -9,13 +10,17 @@ import java.io.File;
 
 public class Controller {
     @FXML private Label label;
+    //public TextField importTextField;
      public void onClickImport(ActionEvent event) {
-        System.out.println("Click");
+        //System.out.println("Click");
          final FileChooser fileChooser = new FileChooser();
          configuringFileChooser(fileChooser);
          Stage stage = Stage.class.cast(Control.class.cast(event.getSource()).getScene().getWindow());
          File selectedFile = fileChooser.showOpenDialog(stage);
 
+         //System.out.println(selectedFile.getAbsolutePath());
+         Main.fileImportPath = selectedFile.getAbsolutePath();
+         //importTextField.setText(Main.fileImportPath);
      }
 
 
@@ -35,5 +40,17 @@ public class Controller {
     }
 
     public void onClickExport(ActionEvent event) {
+        final DirectoryChooser directoryChooser = new DirectoryChooser();
+        configuringDirectoryChooser(directoryChooser);
+        Stage stage = Stage.class.cast(Control.class.cast(event.getSource()).getScene().getWindow());
+        File selectedFile = directoryChooser.showDialog(stage);
+        Main.fileExportPath = selectedFile.getAbsolutePath();
+    }
+    private void configuringDirectoryChooser(DirectoryChooser directoryChooser) {
+        // Set title for DirectoryChooser
+        directoryChooser.setTitle("Select a Export Directory");
+
+        // Set Initial Directory
+        //directoryChooser.setInitialDirectory(new File(System.getProperty("user.home")));
     }
 }

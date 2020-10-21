@@ -17,10 +17,10 @@
       <RowConstraints />
    </rowConstraints>
    <Pane prefHeight="164.0" prefWidth="480.0">
-      <Button layoutX="14.0" layoutY="75.0" mnemonicParsing="false" onAction="#onClickEvent" prefHeight="25.0" prefWidth="73.0" text="Import" />
-      <Button layoutX="16.0" layoutY="116.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" text="Export" />
-      <TextField layoutX="97.0" layoutY="75.0" prefHeight="25.0" prefWidth="356.0" />
-      <TextField layoutX="99.0" layoutY="116.0" prefHeight="25.0" prefWidth="356.0" />
+      <Button layoutX="14.0" layoutY="75.0" mnemonicParsing="false" onAction="#onClickImport" prefHeight="25.0" prefWidth="73.0" text="Import" />
+      <Button layoutX="16.0" layoutY="116.0" mnemonicParsing="false" onAction="#onClickExport" prefHeight="25.0" prefWidth="73.0" text="Export" />
+      <TextField fx:id="importTextField" layoutX="97.0" layoutY="75.0" onAction="#onClickImport" prefHeight="25.0" prefWidth="356.0" />
+      <TextField layoutX="98.0" layoutY="116.0" onAction="#onClickExport" prefHeight="25.0" prefWidth="356.0" />
       <Label layoutX="175.0" layoutY="14.0" prefHeight="35.0" prefWidth="120.0" text="Aufmaß Tool" textAlignment="CENTER">
          <font>
             <Font size="20.0" />
