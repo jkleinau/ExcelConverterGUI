@@ -1,0 +1,33 @@
+<PROJEKT xmlns="urn:in-software-com:IN-AUFMASS">
+   <!-- Manuell erstellte AUFMASS-Datei -->
+   <!-- Diese Datei enthaelt eine Position mit Positionsnr. 01.01 -->
+   <!-- Diese Position bestehend aus Jumbo und Jumbobestandteil (Unterposition) enthaelt zwei Aufmasszeilen -->
+   <!-- Der Jumbobestandteil enthaelt ebenfalls zwei Aufmasszeilen -->
+   <AUFMASSDATUM>1999-09-12</AUFMASSDATUM>
+   <BLATTNUMMER>1</BLATTNUMMER>
+   <POSITION ID="01.01">
+      <AUFMASSZEILE>
+         <STICHWORT>Stichwort1 der Position 01.01</STICHWORT>
+         <TEXT>Aufmasstext1 der Position 01.01</TEXT>
+         <AUFMASS>125*45*7</AUFMASS>
+      </AUFMASSZEILE>
+      <AUFMASSZEILE>
+         <STICHWORT>Stichwort2 der Position 01.01</STICHWORT>
+         <TEXT>Aufmasstext2 der Position 01.01</TEXT>
+         <ANZAHL>125</ANZAHL>
+         <BREITE>5</BREITE>
+      </AUFMASSZEILE>
+      <UNTERPOSITION>
+         <AUFMASSZEILE>
+            <STICHWORT>Stichwort1 der Unterposition 01.01</STICHWORT>
+            <TEXT>Aufmasstext1 der Unterposition 01.01</TEXT>
+            <AUFMASS>125*45*7</AUFMASS>
+         </AUFMASSZEILE>
+         <AUFMASSZEILE>
+            <STICHWORT>Stichwort2 der Unterposition 01.01</STICHWORT>
+            <TEXT>Aufmasstext2 der Unterposition 01.01</TEXT>
+            <AUFMASS>125*45*7</AUFMASS>
+         </AUFMASSZEILE>
+      </UNTERPOSITION>
+   </POSITION>
+</PROJEKT>
