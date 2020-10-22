@@ -3,6 +3,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.apache.commons.lang3.ObjectUtils;
 
 public class GUI extends Application {
 
@@ -12,6 +13,7 @@ public class GUI extends Application {
         primaryStage.setTitle("Aufmaß");
         primaryStage.setScene(new Scene(root, 470, 160));
         primaryStage.show();
+        ObjectUtils stringUtils = new ObjectUtils();
     }
 
 
