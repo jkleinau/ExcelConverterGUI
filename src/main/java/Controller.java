@@ -1,5 +1,6 @@
 import javafx.event.ActionEvent;
 import javafx.scene.control.Control;
+import javafx.scene.control.TextField;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -7,6 +8,9 @@ import javafx.stage.Stage;
 import java.io.File;
 
 public class Controller {
+    public TextField importTextField;
+    public TextField exportTextfield;
+
     //public TextField importTextField;
      public void onClickImport(ActionEvent event) {
         //System.out.println("Click");
@@ -17,7 +21,7 @@ public class Controller {
 
          //System.out.println(selectedFile.getAbsolutePath());
          Main.fileImportPath = selectedFile.getAbsolutePath();
-         //importTextField.setText(Main.fileImportPath);
+         importTextField.setText(Main.fileImportPath);
      }
 
 
@@ -42,6 +46,7 @@ public class Controller {
         Stage stage = Stage.class.cast(Control.class.cast(event.getSource()).getScene().getWindow());
         File selectedFile = directoryChooser.showDialog(stage);
         Main.fileExportPath = selectedFile.getAbsolutePath();
+        exportTextfield.setText(Main.fileExportPath);
     }
     private void configuringDirectoryChooser(DirectoryChooser directoryChooser) {
         // Set title for DirectoryChooser

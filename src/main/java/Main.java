@@ -25,11 +25,13 @@ public class Main {
 
     public static void convert(){
         CSVImport csvImport = new CSVImport();
+        long begin = System.currentTimeMillis();
         csvImport.loadData(fileImportPath);
         csvImport.findHeader();
         csvImport.createAufmasszeilen(aufmasszeileList);
 
         writeCSVToXMLforAufmass();
+        System.out.println(System.currentTimeMillis()-begin);
     }
 
 
